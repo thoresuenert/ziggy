@@ -183,6 +183,34 @@ return axios.get(route('posts.show', post))
 		</section>
 
 		<section>
+			<h2 id="default-values"><a class="title-link" href="#default-values"></a> Default Values</h2>
+			
+			<p>See Laravel <a href="https://laravel.com/docs/5.5/urls#default-values" target="_blank">documentation</a></p>
+
+			<p>Default values work out of the box for Laravel versions >= 5.5.29, for the previous versions you will need to set the default parameters by including this code somewhere in the same page as our Blade Directive (<code>@routes</code>)</p>
+
+			<div class="example-box">
+				<p>Example</p>
+				<p class="lang">PHP</p>
+				<div class="example">
+					<pre><code class="language-php">Ziggy.defautParameters = {
+	//example
+	locale: "en"
+}</code></pre>
+				</div>
+			</div>
+			<p>As shown in the example above, Ziggy the use of asterisks as wildcards in filters. <code>home</code> will only match the route named <code>home</code> whereas <code>api.*</code> will match any route whose name begins with <code>api.</code>, such as <code>api.posts.index</code> and <code>api.users.show</code>.</p>
+			<div class="alert alert-warning" role="alert">
+				<div class="row">
+					<div class="col-1 d-none d-sm-block">
+						<img class="caution" src="../dist/images/caution.svg">
+					</div>
+					<p class="col">You've got to choose one or the other. Setting <code>whitelist</code> and <code>blacklist</code> will disable filtering altogether and simply return the default list of routes.</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
 			<h2 id="filtering-routes"><a class="title-link" href="#filtering-routes"></a> Filtering Routes</h2>
 			<p>Filtering routes is <b>completely</b> optional. If you want to pass all of your routes to JavaScript by default, you can carry on using Ziggy as described above.</p>
 
